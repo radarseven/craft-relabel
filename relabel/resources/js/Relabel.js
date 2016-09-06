@@ -214,10 +214,13 @@
 							if($instruct.length === 0)
 							{
 								var $instructParent = $('<div class="instructions">').insertAfter($label);
-								$instruct = $('<p>').appendTo($instructParent);
+								// @radarseven: Modified to support Markdown in relabeled instructions.
+								// $instruct = $('<p>').appendTo($instructParent);
 							}
 
-							$instruct.text(Craft.t(label.instructions));
+							// $instruct.text(Craft.t(label.instructions));
+							// @radarseven: Modified to support Markdown in relabeled instructions.
+							$instructParent.html(Craft.t(label.instructions));
 						}
 					}
 				}

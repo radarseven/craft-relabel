@@ -168,7 +168,7 @@ class RelabelPlugin extends BasePlugin
 				'fieldId' => (int) $label->fieldId,
 				'fieldLayoutId' => (int) $label->fieldLayoutId,
 				'name' => Craft::t($label->name),
-				'instructions' => Craft::t($label->instructions),
+				'instructions' => Craft::t(StringHelper::parseMarkdown($label->instructions)), // @radarseven: Modified to support Markdown in relabeled instructions.
 			);
 		}
 
