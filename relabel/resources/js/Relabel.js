@@ -209,18 +209,17 @@
 						}
 						else
 						{
-							var $instruct = $heading.find('.instructions > p');
+							// @radarseven: Modified to support Markdown in relabeled instructions.
+							var $instruct = $heading.find('.instructions');
 
 							if($instruct.length === 0)
 							{
-								var $instructParent = $('<div class="instructions">').insertAfter($label);
 								// @radarseven: Modified to support Markdown in relabeled instructions.
-								// $instruct = $('<p>').appendTo($instructParent);
+								$instruct = $('<div class="instructions">').insertAfter($label);
 							}
 
-							// $instruct.text(Craft.t(label.instructions));
 							// @radarseven: Modified to support Markdown in relabeled instructions.
-							$instructParent.html(Craft.t(label.instructions));
+							$instruct.html(Craft.t(label.instructions));
 						}
 					}
 				}
